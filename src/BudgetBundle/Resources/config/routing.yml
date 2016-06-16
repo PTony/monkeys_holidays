@@ -1,3 +1,7 @@
+budget_cagnottes:
+    resource: "@BudgetBundle/Resources/config/routing/cagnottes.yml"
+    prefix:   /cagnottes
+
 budget_homepage:
     path:     /
     defaults: { _controller: BudgetBundle:Default:index }
