@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 ">
+	{% if error %}
+		<div class="row">
+    		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    	</div>
+	{% endif %}
+
+		<div class="row login">
+			<div class="col-md-12 wcs">
+				<div class="row">					
+					{# <a href="./"><img src="{{ asset('/images/WCS.png') }}"/></a> #}
+					<form action="{{ path("fos_user_security_check") }}" method="post">
+
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+						<div class="row">
+							<div class="col-md-12 text-center login-form">
+								<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="{{ 'security.login.username'|trans }}" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center login-form">
+								<input type="password" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans }}"  />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+								<label for="remember_me">{{ 'Se souvenir'|trans }}</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<input class="btn btn-info" type="submit" id="_submit" name="_submit" value="{{ 'Se connecter'|trans }}" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<p>Pas encore de compte? <a href="{{path('user_register')}}">S'enregistrer</a></p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body %}

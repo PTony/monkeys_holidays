@@ -3,9 +3,19 @@ budget:
     prefix:   /
 
 # app/config/routing.yml
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
 
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+user_login:
+    path:     /login
+    defaults: { _controller: AppBundle:Security:login }
+
+user_register:
+    path:     /register
+    defaults: { _controller: AppBundle:Registration:register }
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
