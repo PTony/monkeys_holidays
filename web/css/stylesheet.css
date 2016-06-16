@@ -1,0 +1,34 @@
+.btn-register
+{
+	margin-left:54%;
+	margin-top:10px;
+}
+.register-form
+{
+	margin-top: 5px;
+}
+.trait
+{
+	margin-top: 30px;
+	height: 5px;
+	background-color: #66CCCC;
+}
+.navbar-brand {
+	width: 50%;
+	height: 50%;
+	padding-top: 0px;
+}
+
+.login {
+	background-color: rgba(241,241,241,1);
+	border-radius: 5px;
+	border: solid #1fa597 2px;
+	color: #35383a;
+}
+.log-title {
+	color: #1fa597;
+	text-align: center;
+}
+.champ-log {
+	margin: 3px;
+}
