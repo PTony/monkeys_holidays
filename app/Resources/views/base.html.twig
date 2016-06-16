@@ -5,13 +5,15 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
        
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('/css/stylesheet.css') }}">
-        <script type="text/javascript" src="{{ asset('js/jquery.js') }}" ></script>
-        <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}" ></script>
+       
+        
     </head>
     <body>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/stylesheet.css') }}">
+        {% endblock %}
+        
         <nav role="navigation" class="navbar navbar-default">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -27,7 +29,7 @@
     <!-- Collection of nav links, forms, and other content for toggling -->
     <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class=""><a href="#">Dashboard</a></li>
+            <li class=""><a href="#">Créer ton groupe d'amis !</a></li>
             <li><a href="#">Liste Clients</a></li>
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Créer <b class="caret"></b></a>
@@ -57,11 +59,15 @@
     </div>
 </nav>
         <a href="./">
-          <img style="position:fixed;top:7%;left:0%;right:0%;height:100%;width:100%;z-index:-1:" src="{{ asset('/images/sea.jpg') }}"/> 
+          {# <img style="position:fixed;top:7%;left:0%;right:0%;height:100%;width:100%;z-index:-1:" src="{{ asset('/images/sea.jpg') }}"/>  #}
          </a>
 
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        
+        {% block javascripts%}
+        <script type="text/javascript" src="{{ asset('js/jquery.js') }}" ></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}" ></script>
+        {% endblock %}
         
     </body>
 </html>

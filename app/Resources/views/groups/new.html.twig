@@ -1,16 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Groups creation</h1>
-
+    <div class="col-md-offset-4">
+        <h1>Création d'un groupe</h1>
+    </div>
+        <div class="col-md-offset-4 col-md-3 col-md-offset-4 c_group">
+        <img src="{{ asset('/images/palmier.png') }}"  alt="palmier" class="palmier" />
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Créer" class="btn-info" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('groups_index') }}">Back to the list</a>
-        </li>
-    </ul>
+
+    
+        <p>
+            <a href="{{ path('groups_index') }}">Aller a la liste</a>
+        </p>
+    
+        </div>
 {% endblock %}

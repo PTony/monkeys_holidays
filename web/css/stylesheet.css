@@ -1,7 +1,7 @@
-.btn-register
+.btn-info
 {
-	margin-left:54%;
-	margin-top:10px;
+	margin-left:59%;
+	margin-top:15px;
 }
 .register-form
 {
@@ -31,4 +31,9 @@
 }
 .champ-log {
 	margin: 3px;
+}
+.c_group {
+	background-color:rgba(241,241,241,1);
+
+
 }

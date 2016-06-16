@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Groups</h1>
+    <h1>Groupes</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>Numéro du groupe</th>
                 <td>{{ group.id }}</td>
             </tr>
             <tr>
-                <th>Groupname</th>
+                <th>Nom du groupe</th>
                 <td>{{ group.groupName }}</td>
             </tr>
         </tbody>
@@ -18,14 +18,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('groups_index') }}">Back to the list</a>
+            <a href="{{ path('groups_index') }}">Retour a la liste des groupes</a>
         </li>
         <li>
-            <a href="{{ path('groups_edit', { 'id': group.id }) }}">Edit</a>
+            <a href="{{ path('groups_edit', { 'id': group.id }) }}">Editer</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>
