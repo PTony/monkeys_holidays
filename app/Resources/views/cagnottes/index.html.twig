@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cagnottes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cagnottename</th>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cagnotte in cagnottes %}
+            <tr>
+                <td><a href="{{ path('cagnottes_show', { 'id': cagnotte.id }) }}">{{ cagnotte.id }}</a></td>
+                <td>{{ cagnotte.cagnotteName }}</td>
+                <td>{{ cagnotte.value }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cagnottes_show', { 'id': cagnotte.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cagnottes_edit', { 'id': cagnotte.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cagnottes_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

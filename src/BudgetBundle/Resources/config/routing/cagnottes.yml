@@ -1,0 +1,24 @@
+cagnottes_index:
+    path:     /
+    defaults: { _controller: "BudgetBundle:Cagnottes:index" }
+    methods:  GET
+
+cagnottes_show:
+    path:     /{id}/show
+    defaults: { _controller: "BudgetBundle:Cagnottes:show" }
+    methods:  GET
+
+cagnottes_new:
+    path:     /new
+    defaults: { _controller: "BudgetBundle:Cagnottes:new" }
+    methods:  [GET, POST]
+
+cagnottes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BudgetBundle:Cagnottes:edit" }
+    methods:  [GET, POST]
+
+cagnottes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BudgetBundle:Cagnottes:delete" }
+    methods:  DELETE

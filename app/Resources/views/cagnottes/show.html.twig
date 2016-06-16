@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cagnottes</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cagnotte.id }}</td>
+            </tr>
+            <tr>
+                <th>Cagnottename</th>
+                <td>{{ cagnotte.cagnotteName }}</td>
+            </tr>
+            <tr>
+                <th>Value</th>
+                <td>{{ cagnotte.value }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cagnottes_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('cagnottes_edit', { 'id': cagnotte.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
