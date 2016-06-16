@@ -13,7 +13,7 @@
 	height: 5px;
 	background-color: #66CCCC;
 }
-.navbar-brand {
+/*.navbar-brand {*/
 	width: 50%;
 	height: 50%;
 	padding-top: 0px;
@@ -32,6 +32,7 @@
 .champ-log {
 	margin: 3px;
 }
+
 .c_group {
 	background-color:rgba(241,241,241,1);
 
