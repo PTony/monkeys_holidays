@@ -67,6 +67,13 @@ class RegistrationController extends Controller
 
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
 
+            $em = $this->getDoctrine()->getManager();
+            $age = $request->request->get('age');
+            $group = new Groups();
+            $datauser->setAge($age);
+            $em->persist($datauser);
+            $em->flush();
+
             return $response;
         }
 

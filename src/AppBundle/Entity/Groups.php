@@ -22,6 +22,13 @@ class Groups
     private $id;
 
     /**
+    * 
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Groups")
+    * @ORM\JoinColumn(name="group_id", referencedColumnName="id")
+    */
+    private $group_id;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="group_name", type="string", length=255, nullable=true)
@@ -37,6 +44,30 @@ class Groups
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set idUser
+     *
+     * @param integer $idUser
+     *
+     * @return Datauser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+
+        return $this;
+    }
+
+    /**
+     * Get idUser
+     *
+     * @return int
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
     }
 
     /**
