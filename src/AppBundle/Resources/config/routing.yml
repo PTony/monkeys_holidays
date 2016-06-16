@@ -2,3 +2,6 @@ app_groups:
     resource: "@AppBundle/Resources/config/routing/groups.yml"
     prefix:   /groups
 
+app_user:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix:   /user
