@@ -5,3 +5,7 @@ app_groups:
 app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix:   /user
+
+app_appartenir:
+    resource: "@AppBundle/Resources/config/routing/appartenir.yml"
+    prefix:   /appartenir
