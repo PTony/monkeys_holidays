@@ -33,8 +33,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <li><a href="{{ path('groups_new') }}">Créer ton groupe d'amis <i class="fa fa-pencil-square-o"></i></a>
-                </li>
+                <li><a href="{{ path('groups_new') }}">Créer ton groupe d'amis <i class="fa fa-pencil-square-o"></i></a></li>
                 <li><a href="{{ path('groups_mine') }}">Mes groupes <i class="fa fa-users" aria-hidden="true"></i></a></li>
                 <li><a href="{{ path('cagnottes_index') }}">Mes cagnottes <i class="fa fa-eur" aria-hidden="true"></i></a></li>
                 <li class="dropdown">
@@ -62,8 +61,8 @@
               </ul>
             {% else %}
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ path('user_login') }}" role="button" class="btn btn-default navbar-btn">Se connecter</a></li>
-                <li><a href="{{ path('user_register') }}" role="button" class="btn btn-warning">S'inscrire</a></li>
+                <li><a href="{{ path('user_login') }}">Se connecter</a></li>
+                <li><a href="{{ path('user_register') }}">S'inscrire</a></li>
               </ul>
             {% endif %}
             </div><!-- /.navbar-collapse -->
