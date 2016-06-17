@@ -22,3 +22,8 @@ groups_delete:
     path:     /{id}/delete
     defaults: { _controller: "AppBundle:Groups:delete" }
     methods:  DELETE
+
+groups_mine:
+    path:     /mine
+    defaults: { _controller: "AppBundle:Groups:mine" }
+    methods:  [GET, POST]

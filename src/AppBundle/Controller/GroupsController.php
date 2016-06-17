@@ -111,6 +111,22 @@ class GroupsController extends Controller
     }
 
     /**
+     * Lists all Groups entities.
+     *
+     */
+    public function mineAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $groups = $em->getRepository('AppBundle:Groups')->findAll();
+
+        return $this->render('groups/index.html.twig', array(
+            'groups' => $groups,
+        ));
+    }
+
+
+    /**
      * Creates a form to delete a Groups entity.
      *
      * @param Groups $group The Groups entity
