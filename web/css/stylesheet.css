@@ -13,14 +13,14 @@
 	height: 5px;
 	background-color: #66CCCC;
 }
-/*.navbar-brand {*/
+.navbar-brand {
 	width: 50%;
 	height: 50%;
 	padding-top: 0px;
 }
 
 .login {
-	background-color: rgba(241,241,241,1);
+	background-color: rgba(106, 194, 255, 0.4);
 	border-radius: 5px;
 	border: solid #1fa597 2px;
 	color: #35383a;
@@ -34,7 +34,12 @@
 }
 
 .c_group {
-	background-color:rgba(241,241,241,1);
+	background-color:rgba(106, 194, 255, 0.8);
 
 
 }
+
+
+
+
+
