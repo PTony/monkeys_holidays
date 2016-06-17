@@ -1,10 +1,9 @@
 <?php
 
-namespace BudgetBundle\Controller;
+namespace BudgetBundle\CagnottesController;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use BudgetBundle\Controller\CagnottesController
 use BudgetBundle\Entity\Cagnottes;
 use BudgetBundle\Form\CagnottesType;
 

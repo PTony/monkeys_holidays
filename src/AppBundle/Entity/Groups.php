@@ -82,7 +82,24 @@ class Groups
 
         return $this;
     }
-
+        /**
+     * Get idUser
+     *
+     * @return int
+     */
+    public function getGroup()
+    {
+        return $this->idGroup;
+    }
+            /**
+     * Get idUser
+     *
+     * @return int
+     */
+    public function setGroup()
+    {
+        return $this->idGroup;
+    }
     /**
      * Get groupName
      *
@@ -90,6 +107,6 @@ class Groups
      */
     public function getGroupName()
     {
-        return $this->groupName;
+        return $this->idgroupName;
     }
 }

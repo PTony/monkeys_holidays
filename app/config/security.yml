@@ -27,11 +27,11 @@ security:
             anonymous:    true
 
     access_control:
+        - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/groups/., role: ROLE_USER }
-        - { path: ^/user/., role: ROLE_USER }
-        - { path: ^/appartenir/., role: ROLE_USER }
-        - { path: ^/cagnottes/., role: ROLE_USER }
+        - { path: ^/appartenir(/.)*., role: ROLE_USER }
+        - { path: ^/cagnottes(/.)*., role: ROLE_USER }
+        - { path: ^/groups(/.)*, role: ROLE_USER }
+        - { path: ^/user(/.)*., role: ROLE_USER }

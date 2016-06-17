@@ -21,9 +21,9 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Assert\NotBlank(message="Please enter your Firstname.", groups={"Registration", "Profile"})
+     * @Assert\NotBlank(message="Veuillez entrer un prénom.", groups={"Registration", "Profile"})
      * @Assert\Length(
      *     min=3,
      *     max=255,
@@ -35,9 +35,9 @@ class User extends BaseUser
     protected $firstname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Assert\NotBlank(message="Please enter your lastname.", groups={"Registration", "Profile"})
+     * @Assert\NotBlank(message="Veuillez entrer un nom.", groups={"Registration", "Profile"})
      * @Assert\Length(
      *     min=1,
      *     max=255,
@@ -48,19 +48,6 @@ class User extends BaseUser
      */
     protected $lastname;
 
-    /**
-     * @ORM\Column(type="float")
-     *
-     * @Assert\NotBlank(message="Please enter your budget.", groups={"Registration", "Profile"})
-     * @Assert\Length(
-     *     min=1,
-     *     max=255,
-     *     minMessage="The budget is too short.",
-     *     maxMessage="The budget is too long.",
-     *     groups={"Registration", "Profile"}
-     * )
-     */
-    protected $budget;
 
     public function __construct()
     {
@@ -114,26 +101,4 @@ class User extends BaseUser
         return $this->firstname;
     }
 
-    /**
-     * Set Budget
-     *
-     * @param string $budget
-     * @return User
-     */
-    public function setBudget($budget)
-    {
-        $this->budget = $budget;
-
-        return $this;
-    }
-
-    /**
-     * Get Budget
-     *
-     * @return string 
-     */
-    public function getBudget()
-    {
-        return $this->budget;
-    }
 }
