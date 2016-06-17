@@ -19,6 +19,26 @@
 			</div>
 		</div>
 
+		<div class="row">
+			<div class="col-md-6">
+				<label>Nom :</label>
+			</div>
+			<div class="col-md-6">
+				{{ form_widget(form.firstname) }}
+				{{ form_errors(form.firstname) }}	
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<label>Prénom :</label>
+			</div>
+			<div class="col-md-6">
+				{{ form_widget(form.lastname) }}
+				{{ form_errors(form.lastname) }}	
+			</div>
+		</div>
+
 		<div class="row register-form">
 			<div class="col-md-6">
 				<label>Adresse email :</label>
@@ -26,15 +46,6 @@
 			<div class="col-md-6">
 				{{ form_widget(form.email) }}
 				{{ form_errors(form.email) }}	
-			</div>
-		</div>
-
-		<div class="row register-form">
-			<div class="col-md-6">
-				<label>Âge :</label>
-			</div>
-			<div class="col-md-6">
-				<input type="number" name="age" />
 			</div>
 		</div>
 
@@ -58,7 +69,7 @@
 		</div>
 		<div class="row">
 		    <div class="col-md-12 btn-register">
-		        <input class="btn btn-info" type="submit" value="{{ 'Confirmer'|trans }}" />
+		        <input class="btn btn-info" type="submit" value="{{ 'registration.submit'|trans }}" />
 		    </div>
 		</div>
 		<div class="row">

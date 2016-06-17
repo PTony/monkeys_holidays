@@ -32,34 +32,38 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <li><a href="{{ path('groups_new') }}">Créer ton groupe d'amis <i class="fa fa-users"></i></a>
-                </li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li><a href="{{ path('groups_new') }}">Créer ton groupe d'amis <i class="fa fa-users"></i></a>                </li>
                 <li><a href="{{ path('groups_mine') }}">Mes groupes <i class="fa fa-users" aria-hidden="true"></i></a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Créer <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="{{ path('groups_new') }}">Un groupe</a></li>
-                    <li><a href="#"> Une cagnotte</a></li>
-                  
+                    <li><a href="{{ path('cagnottes_new') }}"> Une cagnotte</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Éditer <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    {# <li><a href="{{ path('groups_edit') }}">Un groupe</a></li> #}
-                    <li><a href="#">Une cagnotte</a></li>
+                    {# <li><a href="{{ path('groups_index') }}">Un groupe</a></li> #}
+                    <li><a href="{{ path('cagnottes_index') }}">Une cagnotte</a></li>
                    
                   </ul>
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Se déconnecter <i class="fa fa-sign-out" aria-hidden="true"></i></a><</li>
-                {% else %}
-                        <a href="{{ path('user_login') }}" role="button" class="btn btn-default navbar-btn">Se connecter</a>
-                        <a href="{{ path('user_register') }}" role="button" class="btn btn-warning">S'inscrire</a>
-                    {% endif %}
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Se déconnecter <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                  </ul>
               </ul>
+            {% else %}
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ path('user_login') }}" role="button" class="btn btn-default navbar-btn">Se connecter</a></li>
+                <li><a href="{{ path('user_register') }}" role="button" class="btn btn-warning">S'inscrire</a></li>
+              </ul>
+            {% endif %}
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>        
